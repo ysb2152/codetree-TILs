@@ -5,7 +5,7 @@ k=0
 for i in range(1,101):
   if i==n or i==m:
     if n==m:
-        i=n
+        k=n
     if n==1 or m==1:
         k=1
     else:
