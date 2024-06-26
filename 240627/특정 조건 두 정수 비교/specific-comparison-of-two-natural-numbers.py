@@ -3,6 +3,8 @@ if a<b:
     print("1",end=" ")
 elif b<a:
     print("0",end=" ")
+else:
+    print("0",end=" ")
 if a==b:
     print("1")
 else:
