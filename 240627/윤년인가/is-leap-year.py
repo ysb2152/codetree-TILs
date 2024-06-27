@@ -6,8 +6,14 @@ if y>=400:
         print("true")
     elif y%4==0:
         print("true")
+    else:
+        print("false")
 elif y<400:
     if y%100==0:
         print("false")
     elif y%4==0:
         print("true")
+    else:
+        print("false")
+else:
+    print("false")
