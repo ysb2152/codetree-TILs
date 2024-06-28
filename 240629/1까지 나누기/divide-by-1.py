@@ -1,14 +1,10 @@
 n=int(input())
 cnt=1
-for i in range(1,n+1):
-    if n==2 or n==3:
-        cnt==2
-        break
-    cnt+=1
-    n//=i
+for i in range(1,8):
     
-
     
-    if (n//i)<=1:
+    if (n//(i))<=1:
         print(f"{cnt}")
         break
+    n//=i
+    cnt+=1
