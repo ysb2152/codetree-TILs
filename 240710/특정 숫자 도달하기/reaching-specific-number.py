@@ -3,9 +3,10 @@ s=0
 leng=len(L)
 for ele in L:
     if ele>=250:
+        L=L[:L.index(ele)]
         break
     s+=ele
-L=L[:L.index(ele)]
+
 
    
 print(s,end=" ")
