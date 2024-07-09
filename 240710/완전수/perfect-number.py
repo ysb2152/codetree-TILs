@@ -1,7 +1,7 @@
 start,end=map(int,input().split())
 cnt1=0
 
-for i in range(start+1,end):
+for i in range(start,end+1):
     cnt=0
     for j in range(1,i):
         if i%j==0:
