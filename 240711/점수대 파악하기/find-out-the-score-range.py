@@ -1,6 +1,8 @@
 L=list(map(int,input().split()))
 k=[0 for _ in range(len(L)+1)]
 for ele in L:
+    if ele==0:
+        break
     if ele<10:
         continue
     k[(ele//10)]+=1
