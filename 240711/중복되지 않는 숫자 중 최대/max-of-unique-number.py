@@ -1,12 +1,22 @@
 n=int(input())
 L=list(map(int,input().split()))
-L=set(L)
-L=list(L)
 cnt=0
-for ele in L:
-    if cnt>=2:
+k=set(L)
+k=list(k)
+for ele in k:
+    for i in L:
+        
+        if ele==i:
+            cnt+=1
+            if cnt>=2:
+                
+                k.remove(i)
+                cnt=0
+cnt1=0
+for ele in k:
+    if cnt1>=2:
         print("-1")
-        exit()
-    if max(L)==ele:
-        cnt+=1
-print(max(L))
+        break
+    if ele==max(k):
+        cnt1+=1
+print(max(k))
