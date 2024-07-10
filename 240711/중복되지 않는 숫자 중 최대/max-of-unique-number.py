@@ -4,10 +4,10 @@ cnt=0
 k=[]
 k=set(L)
 k=list(k)
-for i in range(0,len(k)-1):
+for p in k:
     cnt=0
     for ele in L:
-        if k[i]==ele:
+        if p==ele:
             
             cnt+=1
         if cnt>=2:
