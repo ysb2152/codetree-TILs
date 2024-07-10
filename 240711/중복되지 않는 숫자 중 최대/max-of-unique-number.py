@@ -1,23 +1,20 @@
 n=int(input())
 L=list(map(int,input().split()))
 cnt=0
+k=[]
 k=set(L)
 k=list(k)
-
-for ele in k:
-    for i in L:
-        
-        if ele==i:
+for i in range(0,len(k)-1):
+    cnt=0
+    for ele in L:
+        if k[i]==ele:
+            
             cnt+=1
-    if cnt>=2:
-        k.remove(i)
-        cnt=0
-cnt1=0
-
-for ele in L:
-    if cnt1>=2:
-        print("-1")
-        exit()
-    if ele==max(k):
-        cnt1+=1
-print(max(k))
+        if cnt>=2:
+         
+         k.remove(ele)
+        
+if k==[]:
+    print("-1")
+else:
+    print(max(k))
