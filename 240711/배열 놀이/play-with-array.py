@@ -5,12 +5,14 @@ for _ in range(q):
     if k[0]==1:
         print(L[k[1]-1])
     if k[0]==2:
-        for i in L:
-            if i==k[1]:
-                print(L.index(i)+1)
+        for i in range(0,n):
+            if L[i]==k[1]:
+                print(i+1)
                 break
-            elif L.index(i)==k[1]:
+            if i==n-1:
                 print("0")
+                break
+                
     if k[0]==3:
         for i in range(k[1],k[2]+1):
             if i==k[2]:
