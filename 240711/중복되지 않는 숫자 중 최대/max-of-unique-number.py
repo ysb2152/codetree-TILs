@@ -1,27 +1,22 @@
-n=int(input())
-L=list(map(int,input().split()))
-cnt=0
-k=[]
-k=set(L)
-k=list(k)
-if len(k)==(len(L)/2):
-    print("-1")
-    exit()
-for p in k:
-    cnt=0
-    for ele in L:
-        if p==ele:
-            
-            cnt+=1
-        if cnt>=2:
-         
-         if ele in k:
-            
-            k.remove(ele)
-            cnt=0
+# 변수 선언 및 입력:
+
+n = int(input())
+nums = list(map(int, input().split()))
+
+# 최댓값 찾기
+max_num = -1
+
+for curr_num in nums:
+    # 최대가 될 수 있는 후보입니다.
+    if max_num < curr_num:
+        # 갱신할 수 있는지 확인하기 위해 이 숫자의 등장 빈도를 셉니다.
+        count = 0
+        for elem in nums:
+            if elem == curr_num:
+                count += 1
         
-        
-if k==[]:
-    print("-1")
-else:
-    print(max(k))
+        # 이 숫자가 배열에서 유일할때만 갱신합니다.
+        if count == 1:
+            max_num = curr_num
+
+print(max_num)
