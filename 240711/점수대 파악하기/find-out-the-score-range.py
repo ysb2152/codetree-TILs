@@ -1,5 +1,5 @@
 L=list(map(int,input().split()))
-k=[0 for _ in range(len(L)+1)]
+k=[0 for _ in range(100)]
 
 
 for ele in L:
@@ -7,6 +7,7 @@ for ele in L:
         break
     elif ele<10:
         continue
+    
     k[(ele//10)]+=1
     
 
