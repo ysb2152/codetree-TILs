@@ -32,7 +32,7 @@ for ele in C:
 for ele in D:
     if ele in A:
         A.remove(ele)
-print(A)
+
 if A==B:
     print("Yes")
 else:
