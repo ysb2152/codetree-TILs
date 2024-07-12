@@ -2,11 +2,11 @@ c=input()
 b=c
 cnt=0
 cnt1=0
-for i in range(5):
+for i in range(20):
     if 'ee' in c:
         cnt+=1
-        
         c=c[c.find('ee')+1:]
+        
         
     else:
         break
