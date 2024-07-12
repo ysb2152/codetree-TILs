@@ -18,7 +18,7 @@ for _ in range(q):
         if L[1] in t:
             while L[1] in t:
              t[t.index(L[1])]=L[2]
-            t=''.join(t)
+            
             
             
             t=list(t)
