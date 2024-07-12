@@ -15,10 +15,14 @@ for _ in range(q):
         t=list(t)
         continue
     if L[0]=='2':
-        for i in range(0,len(t)):
-            if t[i]==L[1]:
-                t[i]=L[2]
+        if L[1] in t:
+            while L[1] in t:
+             t[t.index(L[1])]=L[2]
             t=''.join(t)
-            if L[1] not in t:
-                print(t)
+            
+            
+            t=list(t)
+        if L[1] not in t:
+            t=''.join(t)
+            print(t)
             t=list(t)
