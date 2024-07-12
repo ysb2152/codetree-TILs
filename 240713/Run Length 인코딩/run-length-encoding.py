@@ -2,6 +2,10 @@ A=input()
 B=[]
 c=1
 cnt=0
+if len(A)==1:
+    B.append(A)
+    B.append(c)
+
 for i in range(0,len(A)-1):
     if c==1:
         
