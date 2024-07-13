@@ -1,3 +1,3 @@
 c=input()
-c=c[-1:]+c[2:]+c[0]
+c=c[1:]+c[0]
 print(c)
