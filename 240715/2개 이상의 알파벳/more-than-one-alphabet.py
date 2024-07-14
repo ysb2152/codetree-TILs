@@ -3,14 +3,14 @@ def diff(A):
     cnt=0
     if A[0]!=A[1]:
         cnt+=1
-    for i in range(1,len(A)-1):
-        if A[i]!=A[i+1]:
+    for i in range(1,len(A)):
+        if A[0]!=A[i]:
             cnt+=1
     return cnt
 
 B=input()
 
-if diff(B)>=2:
+if diff(B)>=1:
     print("Yes")
 else:
     print("No")
