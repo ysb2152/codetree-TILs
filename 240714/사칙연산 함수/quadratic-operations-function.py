@@ -5,7 +5,7 @@ def minus(a,c):
 def mul(a,c):
     print(f"{a} * {c} = {a*c}")
 def div(a,c):
-    print(f"{a} / {c} = ({a/c}):.0f")
+    print(f"{a} / {c} = {a//c}")
 a,o,c=input().split()
 a=int(a)
 c=int(c)
