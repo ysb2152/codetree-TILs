@@ -14,7 +14,7 @@ def GCD(a,b):
    
 def comp(n):
     global G
-    if n==0:
+    if n==1:
         return G
     G=GCD(L[n-1],G)
     
