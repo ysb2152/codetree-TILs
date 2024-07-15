@@ -5,18 +5,15 @@ def comp(n):
     if len(L)==1:
         return L[0]
     if n==0:
-        
         return chp
     if L[n-1]>chp:
         chp=L[n-1]
         
         return comp(n-1)
     elif L[n-1]<chp:
-        
-        
+            
         return comp(n-1)
-    elif L[n-1]==L[n-2]:
-        
+    elif L[n-1]==chp:
         
         return comp(n-1)
     
