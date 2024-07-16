@@ -10,9 +10,9 @@ def tim(a,b,c):
     global c1
     if a1>a:
         return -1
-    elif b1>b:
+    elif (a1==a and b1>b):
         return -1
-    elif c1>c:
+    elif (a1==a and b1==b and c1>c):
         return -1
     while True:
         if a1==a and b1==b and c1==c:
