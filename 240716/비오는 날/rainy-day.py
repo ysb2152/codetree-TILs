@@ -17,5 +17,7 @@ for i in range(n):
 rain=[]
 for i in range(len(p)):
     rain.append(p[i].date)
-
-print(f"{p[0].date} {p[0].week} {p[0].weather} ")
+rain.sort()
+for i in range(n):
+    if L[i].date==rain[0] and L[i].weather=="Rain":
+        print(f"{L[i].date} {L[i].week} {L[i].weather} ")
