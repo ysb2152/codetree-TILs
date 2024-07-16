@@ -10,6 +10,6 @@ for i in range(n):
     L[i].height=a
     L[i].weight=b
     L[i].n=i+1
-L.sort(key=lambda x: (x.height,x.weight))
+L.sort(key=lambda x: (x.height,-x.weight))
 for student in L:
     print(f"{student.height} {student.weight} {student.n}")
