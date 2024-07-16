@@ -24,7 +24,7 @@ else:
                 break
             days=days[::-1]
             
-            print(days[dd-1])
+            print(days[(dd%7)-1])
             break
         dd+=1
         d2+=1
