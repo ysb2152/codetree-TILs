@@ -1,9 +1,9 @@
 n=int(input())
-L=['0' for _ in range(100)]
-Gray=[0 for _ in range(100)]
+L=['0' for _ in range(10000)]
+Gray=[0 for _ in range(10000)]
 curr=0
 point=[]
-offset=0
+offset=500
 for _ in range(n):
 	x,direction=tuple(input().split())
 	x=int(x)
