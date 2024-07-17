@@ -17,5 +17,7 @@ for i in range(2000):
         if L[i][j]==1:
             index.append(i)
             jndex.append(j)
-
-print((max(index)-min(index)+1)*(max(jndex)-min(jndex)+1))
+if 1 not in L:
+    print("0")
+else:
+    print((max(index)-min(index)+1)*(max(jndex)-min(jndex)+1))
