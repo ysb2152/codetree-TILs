@@ -1,7 +1,7 @@
 n=int(input())
-offset=0
+offset=100
 cnt=0
-L=[[0 for _ in range(10)]for _ in range(10)]
+L=[[0 for _ in range(200)]for _ in range(200)]
 for _ in range(n):
     x1,y1,x2,y2=tuple(map(int,input().split()))
     x1+=offset
