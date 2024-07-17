@@ -11,4 +11,4 @@ for i in range(n):
         p.append(cnt)
         cnt=0
     cnt+=1
-print(max(p))
+print(max(p)+1)
