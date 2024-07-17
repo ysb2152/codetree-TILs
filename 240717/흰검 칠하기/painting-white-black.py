@@ -1,56 +1,44 @@
-n=int(input())
-L=['0' for _ in range(10000)]
-Gray=[0 for _ in range(10000)]
-curr=0
-point=[]
-offset=500
+MAX_K = 100000
+# 변수 선언 및 입력:
+n = int(input())
+a = [0] * (2 * MAX_K + 1)
+cnt_b = [0] * (2 * MAX_K + 1)
+cnt_w = [0] * (2 * MAX_K + 1)
+b, w, g = 0, 0, 0
+
+cur = MAX_K
 for _ in range(n):
-	x,direction=tuple(input().split())
-	x=int(x)
-	if direction=='L':
-		if x==1:
-			L[curr+offset]='W'
-			Gray[curr+offset]+=1
-			
-			continue	   
-		left=curr-x
-		right=curr
-		curr-=x
-		left+=offset
-		right+=offset
-		for i in range(left,right):
-			L[i]='W'		       
-	else:
-		if x==1:
-			L[curr+offset]+='B'
-			Gray[curr+offset]+=1
-			
-			continue
-		left=curr
-		right=curr+x
-		curr+=x
-		left+=offset
-		right+=offset
-		for i in range(left,right-1):
-			L[i]='B'	
-	point.append([left,right])
+    x, c = tuple(input().split())
+    x = int(x)
 
-Graycnt=0
-Blackcnt=0
-Whitecnt=0
-for left,right in point:
-	for i in range(left,right):
-		Gray[i]+=1
-for i in range(len(Gray)):
-	if Gray[i]>=4:
-		L[i]='G'
+    if c == 'L':
+        # x칸 왼쪽으로 칠합니다.
+        while x > 0:
+            a[cur] = 1
+            cnt_w[cur] += 1
+            x -= 1
 
-for ele in L:
-	if ele=='B':
-		Blackcnt+=1
-	if ele=='G':
-		Graycnt+=1
-	if ele=='W':
-		Whitecnt+=1
+            if x: 
+                cur -= 1
+    else:
+        # x칸 오른쪽으로 칠합니다.
+        while x > 0:
+            a[cur] = 2
+            cnt_b[cur] += 1
+            x -= 1
 
-print(Whitecnt,Blackcnt,Graycnt)
+            if x: 
+                cur += 1
+
+for i in range(2 * MAX_K + 1):
+    # 검은색과 흰색으로 두 번 이상 칠해진 타일은 회색입니다.
+    if cnt_b[i] >= 2 and cnt_w[i] >= 2: 
+        g += 1
+    # 그렇지 않으면 현재 칠해진 색깔이 곧 타일의 색깔입니다.
+    elif a[i] == 1: 
+        w += 1
+    elif a[i] == 2: 
+        b += 1
+
+# 정답을 출력합니다.
+print(w, b, g)
