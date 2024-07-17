@@ -6,9 +6,16 @@ for i in range(n):
     a=int(input())
     L.append(a)
 for i in range(n):
-    if i==0 or L[i]!=L[i-1]:
-        
+    if n==1:
         p.append(cnt)
         cnt=0
+    if L[i]!=L[i-1]:
+        p.append(cnt)
+        cnt=0
+    if i==n-1:
+        cnt+=1
+        p.append(cnt)
+        cnt=0
+        
     cnt+=1
-print(max(p)+1)
+print(max(p))
