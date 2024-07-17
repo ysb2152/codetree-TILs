@@ -1,28 +1,41 @@
-n=int(input())
-curr=50000
-L=[0 for _ in range(100000)]
+MAX_K = 100000
+
+n = int(input())
+a = [0] * (2 * MAX_K + 1)
+cnt_b = [0] * (2 * MAX_K + 1)
+cnt_w = [0] * (2 * MAX_K + 1)
+b, w = 0, 0
+
+cur = MAX_K
 for _ in range(n):
-    x,direction=input().split()
-    x=int(x)
-    if direction=='L':
-        left=curr-x
-        right=curr
-        curr-=x
-        for i in range(left,right):
-            L[i]='W'
-    if direction=='R':
-        left=curr
-        right=curr+x
-        curr+=x
-        for i in range(left,right):
-            L[i]='B'
-Blackcnt=0
-Whitecnt=0
+    x, c = tuple(input().split())
+    x = int(x)
 
-for ele in L:
-    if ele=='B':
-        Blackcnt+=1
-    if ele=='W':
-        Whitecnt+=1
+    if c == 'L':
+        
+        while x > 0:
+            a[cur] = 1
+            cnt_w[cur] += 1
+            x -= 1
 
-print(Whitecnt,Blackcnt)
+            if x: 
+                cur -= 1
+    else:
+        
+        while x > 0:
+            a[cur] = 2
+            cnt_b[cur] += 1
+            x -= 1
+
+            if x: 
+                cur += 1
+
+for i in range(2 * MAX_K + 1):
+   
+    if a[i] == 1: 
+        w += 1
+    elif a[i] == 2: 
+        b += 1
+
+
+print(w, b)
