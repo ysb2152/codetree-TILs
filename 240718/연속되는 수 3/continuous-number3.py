@@ -17,6 +17,7 @@ for i in range(n):
         p.append(cnt)
         cnt=0
     if i==n-1:
+        cnt+=1
         p.append(cnt)
         cnt=0
     cnt+=1
