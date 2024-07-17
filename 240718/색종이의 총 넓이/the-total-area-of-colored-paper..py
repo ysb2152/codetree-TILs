@@ -1,7 +1,9 @@
 n=int(input())
-L=[[0 for _ in range(100)]for _ in range(100)]
+L=[[0 for _ in range(200)]for _ in range(200)]
+offset=100
 for _ in range(n):
-    a,b=map(int,input().split())
+    a,b=tuple(map(int,input().split()))
+    a,b=a+offset,b+offset
     for i in range(a,a+8):
         for j in range(b,b+8):
             L[i][j]+=1
