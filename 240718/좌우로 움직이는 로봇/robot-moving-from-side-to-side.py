@@ -30,8 +30,9 @@ for _ in range(m):
 if len(A)>len(B):
     for i in range(1,len(B)):
         if A[i-1]!=B[i-1] and A[i]==B[i]:
+            print(A[i])
             cnt+=1
-    for j in range(len(A),len(B)):
+    for j in range(len(B),len(A)):
         if (B[len(B)-1]==A[j]):
             cnt+=1
 if len(A)<len(B):
@@ -47,6 +48,6 @@ if len(A)==len(B):
     for i in range(1,len(A)):
         if A[i-1]!=B[i-1] and A[i]==B[i]:
             cnt+=1
-     
+
 
 print(cnt)
