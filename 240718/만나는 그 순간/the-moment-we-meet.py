@@ -32,13 +32,19 @@ if len(A)>len(B):
         if A[i]==B[i]:
             print(i+1)
             break
+        if i==len(B)-1:
+            print("-1")
 if len(A)<len(B):
     for i in range(len(A)):
         if A[i]==B[i]:
             print(i+1)
             break
+        if i==len(A)-1:
+            print("-1")
 else:
     for i in range(len(A)):
         if A[i]==B[i]:
             print(i+1)
             break
+        if i==len(A)-1:
+            print("-1")
