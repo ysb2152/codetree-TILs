@@ -4,6 +4,7 @@ L=[[0 for _ in range(1000)]for _ in range(1000)]
 dxs,dys=[-1,0,1,0],[0,1,0,-1]
 a,b=dxs[0],dys[0]
 x,y=500,500
+cnt=0
 L[x][y]='A'
 dir_num=0
 def in_range(a,b):
@@ -24,4 +25,7 @@ for i in range(len(order)):
             x,y=x+dxs[dir_num],y+dys[dir_num]
             if L[x][y]=='A':
                 print(i+1)
+                cnt+=1
             L[x][y]=i+1
+if cnt==0:
+    print("-1")
