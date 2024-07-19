@@ -13,6 +13,8 @@ for i in range(1,n*m):
         dirc=(dirc+1)%4
     x,y=x+dx[dirc],y+dy[dirc]
     L[x][y]=chr(cnt+i-1)
+    if cnt==90:
+        cnt=65
     
 for row in L:
     for ele in row:
