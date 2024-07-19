@@ -14,7 +14,8 @@ for _ in range(n):
         if dirc=='W':
             nx,ny=x+dx[0],y+dy[0]
             if  in_range(nx,ny) and L[nx][ny]=='A':
-                print(t)
+                if cnt==0:
+                    print(t)
                 cnt+=1
                 break
             if in_range(nx,ny) and L[nx][ny]!='A':
@@ -24,7 +25,8 @@ for _ in range(n):
         if dirc=='S':
             nx,ny=x+dx[1],y+dy[1]
             if in_range(nx,ny) and L[nx][ny]=='A':
-                print(t)
+                if cnt==0:
+                    print(t)
                 cnt+=1
                 break
             if in_range(nx,ny) and L[nx][ny]!='A':
@@ -35,7 +37,8 @@ for _ in range(n):
             nx,ny=x+dx[2],y+dy[2]
             
             if  in_range(nx,ny) and L[nx][ny]=='A':
-                print(t)
+                if cnt==0:
+                    print(t)
                 cnt+=1
                 break
             if in_range(nx,ny) and L[nx][ny]!='A':
@@ -46,7 +49,8 @@ for _ in range(n):
         if dirc=='E':
             nx,ny=x+dx[3],y+dy[3]
             if  in_range(nx,ny) and L[nx][ny]=='A':
-                print(t)
+                if cnt==0:
+                    print(t)
                 cnt+=1
                 break
             if in_range(nx,ny) and L[nx][ny]!='A':
