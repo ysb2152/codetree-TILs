@@ -1,12 +1,12 @@
 n=int(input())
 dx,dy=[0, 1, -1, 0], [-1, 0, 0, 1]
-L=[[0 for _ in range(10)]for _ in range(10)]
-L[5][5]='A'
-x,y=5,5
+L=[[0 for _ in range(1000)]for _ in range(1000)]
+L[499][499]='A'
+x,y=499,499
 t=1
 cnt=0
 def in_range(x,y):
-    return 0<=x and x<10 and 0<=y and y<10
+    return 0<=x and x<1000 and 0<=y and y<1000
 for _ in range(n):
     dirc,leng=input().split()
     leng=int(leng)
