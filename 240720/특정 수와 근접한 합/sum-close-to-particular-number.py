@@ -13,6 +13,7 @@ for i in range(len(L2)):
     for j in range(n-2):
         cnt+=L2[i][j]
     L2[i]=cnt
+
 for i in range(len(L2)):
-    L2[i]=L2[i]-s
+    L2[i]=abs(L2[i]-s)
 print(min(L2))
