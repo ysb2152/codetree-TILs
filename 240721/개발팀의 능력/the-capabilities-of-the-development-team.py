@@ -25,7 +25,7 @@ for i in range(5):
 					continue
 				if diff(i,j,k,l)!=0:
 					min_diff= min(min_diff,diff(i,j,k,l))
-if min_diff==0:
+if min_diff==sys.maxsize:
 	min_diff=-1
 		  
 
