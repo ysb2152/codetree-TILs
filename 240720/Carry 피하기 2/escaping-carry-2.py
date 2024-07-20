@@ -34,7 +34,7 @@ for i in range(len(comb)):
                                             maximum.append(comb[i])
 for i in range(len(maximum)):
     maximum[i]=sum(maximum[i])
-if maximum=[]:
+if maximum==[]:
     print("-1")
 else:
     print(max(maximum))
