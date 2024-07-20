@@ -23,14 +23,18 @@ for i in range(19):
         if in_range(i+1,j+1) and in_range(i+2,j+2) and in_range(i+3,j+3) and in_range(i+4,j+4) and L[i][j]==1 and L[i+1][j+1]==1 and L[i+2][j+2]==1 and L[i+3][j+3]==1 and L[i+4][j+4]==1:
             print("1")
             print(i+3,j+3)
+            cnt+=1
         if in_range(i+1,j+1) and in_range(i+2,j+2) and in_range(i+3,j+3) and in_range(i+4,j+4) and L[i][j]==2 and L[i+1][j+1]==2 and L[i+2][j+2]==2 and L[i+3][j+3]==2 and L[i+4][j+4]==2:
             print("2")
             print(i+3,j+3)
+            cnt+=1
         if in_range(i-1,j+1) and in_range(i-2,j+2) and in_range(i-3,j+3) and in_range(i-4,j+4) and L[i][j]==1 and L[i-1][j+1]==1 and L[i-2][j+2]==1 and L[i-3][j+3]==1 and L[i-4][j+4]==1:
             print("1")
             print(i-1,j+3)
+            cnt+=1
         if in_range(i-1,j+1) and in_range(i-2,j+2) and in_range(i-3,j+3) and in_range(i-4,j+4) and L[i][j]==2 and L[i-1][j+1]==2 and L[i-2][j+2]==2 and L[i-3][j+3]==2 and L[i-4][j+4]==2:
             print("2")
             print(i-1,j+3)
+            cnt+=1
 if cnt==0:
     print("-1")
