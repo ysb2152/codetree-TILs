@@ -37,4 +37,4 @@ for i in range(19):
             print(i-1,j+3)
             cnt+=1
 if cnt==0:
-    print("-1")
+    print("0")
