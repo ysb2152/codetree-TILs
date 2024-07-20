@@ -25,6 +25,8 @@ for i in range(5):
 					continue
 				if diff(i,j,k,l)!=0:
 					min_diff= min(min_diff,diff(i,j,k,l))
+if min_diff==0:
+	min_diff=-1
 		  
 
 print(min_diff)
