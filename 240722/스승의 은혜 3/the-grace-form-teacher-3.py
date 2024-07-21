@@ -11,15 +11,14 @@ for i in range(n):
     for j in range(n):
         
         if j==i:
-            cnt+=(L[j][0]//2)
-            cnt+=L[j][1]
+            cnt+=(L[j][0]//2)+L[j][1]
+            
             if cnt>b:
                 break
             num+=1
-            
             continue
-        cnt+=L[j][0]
-        cnt+=L[j][1]
+        cnt+=L[j][0]+L[j][1]
+        
         
         if cnt>=b:
             
