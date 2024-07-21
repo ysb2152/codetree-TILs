@@ -14,8 +14,8 @@ for i in range(n):
         
         if j==i:
             cnt+=(L[j]//2)
-            if cnt>=b:
-                continue
+            if cnt>b:
+                break
             num+=1
             
             continue
