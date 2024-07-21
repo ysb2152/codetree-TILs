@@ -1,5 +1,6 @@
 n,b=map(int,input().split())
 L=[]
+L.sort()
 max_num=0
 for _ in range(n):
     a=int(input())
