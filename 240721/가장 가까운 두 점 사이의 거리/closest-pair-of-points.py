@@ -6,11 +6,14 @@ for i in range(n):
     for j in range(i+1,n):
         x1,y1=L[i]
         x2,y2=L[j]
-    distance=min(distance,abs(x1-x2)+abs(y1-y2))
+        
+    distance=min(distance,((x1-x2)**2+(y1-y2)**2)**0.5)
+
 for i in range(n):
     for j in range(i+1,n):
         x1,y1=L[i]
         x2,y2=L[j]
-    dis=abs(x1-x2)+abs(y1-y2)
+    dis=((x1-x2)**2+(y1-y2)**2)**0.5
     if dis==distance:
+        
         print((x1-x2)**2+(y1-y2)**2)
