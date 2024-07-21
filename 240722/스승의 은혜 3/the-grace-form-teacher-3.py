@@ -20,7 +20,7 @@ for i in range(n):
         cnt+=L[j][0]+L[j][1]
         
         
-        if cnt>=b:
+        if cnt>b:
             
             break
         num+=1
