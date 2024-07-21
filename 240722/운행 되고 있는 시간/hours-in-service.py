@@ -4,7 +4,7 @@ L=[tuple(map(int,input().split()))for _ in range(n)]
 max_time=-999
 for i in range(n):
     cnt=0
-    time=[0 for _ in range(24)]
+    time=[0 for _ in range(20000)]
     for j in range(n):
         if j==i:
             continue
