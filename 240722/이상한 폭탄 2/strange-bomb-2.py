@@ -3,12 +3,13 @@ L=[int(input()) for _ in range(n)]
 EXP=[]
 
 for j in range(n):
-    for k in range(j+1,j+k+1):
-        if k>n-1:
+    for l in range(j+1,j+k+1):
+        if l>n-1 or l<0:
             continue
         
-        if L[j]==L[k]:
-            EXP.append(L[j])
+        if L[j]==L[l]:
+            
+            EXP.append(L[l])
 
 if EXP==[]:
     print("-1")
