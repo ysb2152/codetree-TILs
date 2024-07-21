@@ -4,16 +4,21 @@ R1=[]
 R2=[]
 R3=[]
 cnt=0
-for i in range(n):
-    for j in range(i+1,n):
-        R1.append([L[0][i],L[0][j]])
-for i in range(n):
-    for j in range(i+1,n):
-        R2.append([L[1][i],L[1][j]])
-for i in range(n):
-    for j in range(i+1,n):
-        R3.append([L[2][i],L[2][j]])
-for i in range(len(R1)):
-    if (R1[i] in R2) and (R1[i] in R3):
-        cnt+=1
-print(cnt)
+for l in range(k):
+    for i in range(n):
+        for j in range(i+1,n):
+            R1.append([L[l][i],L[l][j]])
+for row in R1:
+    cnt=R1.count(row)
+    
+    if cnt==k:
+        R2.append(row)
+for row in R2:
+    if row not in R3:
+        R3.append(row)
+
+            
+           
+    
+
+print(len(R3))
