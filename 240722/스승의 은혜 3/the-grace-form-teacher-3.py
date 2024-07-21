@@ -3,7 +3,7 @@ L=[tuple(map(int,input().split()))for _ in range(n)]
 
 max_num=0
 
-L.sort(key=lambda x: x[0]+x[1])
+L.sort(key=lambda x: (x[0]+x[1], x[1]))
 
 for i in range(n):
     cnt=0
@@ -14,7 +14,8 @@ for i in range(n):
             cnt+=(L[j][0]//2)+L[j][1]
             
             if cnt>b:
-                break
+                continue
+            
             num+=1
             continue
         cnt+=L[j][0]+L[j][1]
@@ -22,7 +23,7 @@ for i in range(n):
         
         if cnt>b:
             
-            break
+            continue
         num+=1
     
     
