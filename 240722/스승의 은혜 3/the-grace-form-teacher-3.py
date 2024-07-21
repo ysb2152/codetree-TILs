@@ -3,7 +3,7 @@ L=[tuple(map(int,input().split()))for _ in range(n)]
 
 max_num=0
 
-L.sort()
+L.sort(key=lambda x: x[0]+x[1])
 
 for i in range(n):
     cnt=0
