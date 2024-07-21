@@ -1,10 +1,11 @@
 n,b=map(int,input().split())
 L=[]
-L.sort()
+
 max_num=0
 for _ in range(n):
     a=int(input())
     L.append(a)
+L.sort()
 
 for i in range(n):
     cnt=0
@@ -12,13 +13,15 @@ for i in range(n):
     for j in range(n):
         
         if j==i:
-            cnt+=(L[i]//2)
+            cnt+=(L[j]//2)
+            if cnt>=b:
+                continue
             num+=1
             
             continue
         cnt+=L[j]
-           
-        if cnt>b:
+        
+        if cnt>=b:
             
             break
         num+=1
