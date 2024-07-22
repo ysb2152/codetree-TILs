@@ -10,15 +10,20 @@ for i in range(x, y+1):
         max_num=max(max_num,d1+d2)
     if 100<=i and i<1000:
         d1=i//100
-        d2=(i-d1)//10
-        d3=(i-d1)%10
+        d2=(i-d1*100)//10
+        d3=(i-d1*100)%10
         max_num=max(max_num,d1+d2+d3)
-    if i<=1000 and i<10000:
+    if i>=1000 and i<10000:
         d1=i//1000
-        d2=(i-d1)//100
-        d3=(i-d1-d2)//10
-        d4=(i-d1-d2)%10
+        d2=(i-(d1*1000))//100
+        d3=(i-(d1*1000)-(d2*100))//10
+        d4=(i-(d1*1000)-(d2*100))%10
         max_num=max(max_num,d1+d2+d3+d4)
+    
+        
+
+    if i==10000:
+        max_num=max(max_num,1)
 
         
    
