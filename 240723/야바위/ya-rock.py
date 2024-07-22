@@ -26,7 +26,7 @@ for j in range(n):
         cnt1+=1
 
 for k in range(n):
-    p,q,r=L[j][0],L[j][1],L[j][2]
+    p,q,r=L[k][0],L[k][1],L[k][2]
     p-=1
     q-=1
     r-=1
@@ -36,7 +36,7 @@ for k in range(n):
     if a2[r]==1:
         cnt2+=1
 for l in range(n):
-    p,q,r=L[j][0],L[j][1],L[j][2]
+    p,q,r=L[l][0],L[l][1],L[l][2]
     p-=1
     q-=1
     r-=1
