@@ -2,7 +2,7 @@ n=int(input())
 L=input()
 def check(L,i,j):
     tocheck=L[i:j+1]
-    L=L[:j]+L[j+1:]
+    L=L[:j-1]+L[j:]
     if tocheck in L:
         return 0
     else:
