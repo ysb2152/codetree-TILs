@@ -10,18 +10,17 @@ for i in range(0,101,2):
         plpl=0
         for k in range(n):
             a,b=L[k]
-            if a<i and b<j:
-                mimi+=1
-                continue
-            if a>i and b<j:
-                plmi+=1
+            if a>i and b>j:
+                plpl+=1
                 continue
             if a<i and b>j:
                 mipl+=1
                 continue
-            if a>i and b>i:
-                plpl+=1
+            if a<i and b<j:
+                mimi+=1
                 continue
+            else:
+                plmi+=1
         
         maxi=max(mimi,plmi,mipl,plpl)
         
