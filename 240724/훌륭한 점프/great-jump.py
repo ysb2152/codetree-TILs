@@ -11,9 +11,7 @@ def is_possible(max_val,k):
 
     arr_size = len(available_indices)
     
-    if arr_size==1:
-        
-        return False
+   
     for i in range(1, arr_size):
         dist = available_indices[i] - available_indices[i - 1]
        
@@ -23,7 +21,7 @@ def is_possible(max_val,k):
     
     return True
 minmax = 999999
-for a in range(max(arr),min(arr)-1,-1):
+for a in range(max(arr),1,-1):
     if is_possible(a,k):
         minmax = min(minmax, a)
 
