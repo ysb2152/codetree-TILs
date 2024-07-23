@@ -1,7 +1,7 @@
 n=int(input())
 info=[tuple(map(int,input().split()))for _ in range(n)]
-min_x=9999
-for i in range(1,11):
+min_x=99999999999
+for i in range(1,1000000):
     k=i
     for j in range(n):
         a,b=info[j]
