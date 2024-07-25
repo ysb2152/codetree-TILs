@@ -1,17 +1,10 @@
-L=tuple(map(int,input().split()))
-def iscon(a):
-    if a[2]==a[1]+1 and a[1]==a[0]+1:
-        return True
-    else:
-        return False
-if iscon(L):
+L=list(map(int,input().split()))
+
+cnt=0
+L.sort()
+if L[0]+1==L[1] and L[1]+1==L[2]:
     print("0")
-for i in range(L[1]+1,L[2]):
-    t=[L[1],i,L[2]]
-    if iscon(t):
-        print("1")
-    else:
-        for j in range(t[0]+1,t[1]):
-            s=[t[0],j,t[1]]
-            if iscon(s):
-                print("2")
+elif L[0]+2==L[1] or L[1]+2==L[2]:
+    print("1")
+else:
+    print("2")
