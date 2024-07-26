@@ -14,11 +14,11 @@ for i in range(n):
     
     if L[i][0]=='A':
         A+=L[i][1]
-        if A>B>C:
+        if A>B and A>C:
             fame=['A']
-        if A<C<B:
+        if B>A and B>C:
             fame=['B']
-        if A<B<C:
+        if C>A and C>B:
             fame=['C']
         if A==B and B<C:
             fame=['C']
@@ -36,11 +36,11 @@ for i in range(n):
             fame=['A','B','C']
     elif L[i][0]=='B':
         B+=L[i][1]
-        if A>B>C:
+        if A>B and A>C:
             fame=['A']
-        if A<C<B:
+        if B>A and B>C:
             fame=['B']
-        if A<B<C:
+        if C>A and C>B:
             fame=['C']
         if A==B and B<C:
             fame=['C']
@@ -58,11 +58,11 @@ for i in range(n):
             fame=['A','B','C']
     elif L[i][0]=='C':
         C+=L[i][1]
-        if A>B>C:
+        if A>B and A>C:
             fame=['A']
-        if A<C<B:
+        if B>A and B>C:
             fame=['B']
-        if A<B<C:
+        if C>A and C>B:
             fame=['C']
         if A==B and B<C:
             fame=['C']
