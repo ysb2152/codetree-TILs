@@ -10,7 +10,7 @@ for i in range(n):
     s.append(L[i])
 for i in range(n):
     t.append(L[i])
-t.pop(n-1)
+t.pop(0)
 L.pop(n-1)
 xlayer=[]
 ylayer=[]
