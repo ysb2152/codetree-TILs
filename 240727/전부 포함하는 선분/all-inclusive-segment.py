@@ -1,33 +1,13 @@
 n=int(input())
 L=[tuple(map(int,input().split()))for _ in range(n)]
-L.sort()
-
-
-t=[]
-s=[]
-t.sort(key=lambda x: x[1])
+min_cnt=99999
 for i in range(n):
-    s.append(L[i])
-for i in range(n):
-    t.append(L[i])
-t.pop(0)
-L.pop(n-1)
-xlayer=[]
-ylayer=[]
-x1layer=[]
-y1layer=[]
-
-for i in range(n-1):
-    xlayer.append(L[i][0])
-    ylayer.append(L[i][1])
-for i in range(n-1):
-    xlayer.append(L[i][0])
-    ylayer.append(L[i][1])
-for i in range(n-1):
-    x1layer.append(t[i][0])
-    y1layer.append(t[i][1])
-for i in range(n-1):
-    x1layer.append(t[i][0])
-    y1layer.append(t[i][1])
-
-print(min(max(ylayer)-min(xlayer),max(y1layer)-min(x1layer)))
+    t1=[]
+    t2=[]
+    for j in range(n):
+        if j==i:
+            continue
+        t1.append(L[j][0])
+        t2.append(L[j][1])
+    min_cnt=min(min_cnt,max(t2)-min(t1))
+print(min_cnt)
