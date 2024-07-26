@@ -11,15 +11,16 @@ for i in range(n):
             break
 
 comp.sort(key=lambda x:x[2])
-if comp[len(comp)-1][2]%2==0:
-    L[comp[len(comp)-1][0]+(comp[len(comp)-1][2]//2)]='1'
+L[comp[len(comp)-1][0]+(comp[len(comp)-1][2]//2)]='1'
 min_cnt=9999
+
 for i in range(n):
     cnt=0
     
     for j in range(i+1,n):
         if L[i]=='1'and L[j]=='1':
             cnt=j-i
+            
             min_cnt=min(min_cnt,cnt)
             break
 print(min_cnt)
