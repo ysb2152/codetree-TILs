@@ -95,6 +95,7 @@ for j in range(m):
             continue
         
         toast.erase(pointat)
+        pointat=pointat.prev
     if order.startswith('P '):
         P,alpha=tuple(order.split())
         toast.insert(pointat,alpha)
