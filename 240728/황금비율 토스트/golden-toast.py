@@ -83,7 +83,7 @@ for j in range(m):
         if pointat==toast.begin():
             continue
         pointat=pointat.prev
-        print(pointat.data)
+        
        
     if order.startswith('R'):
         if pointat==toast.end():
@@ -97,11 +97,10 @@ for j in range(m):
         
         toast.erase(pointat)
         
-        print(pointat.data)
+       
     if order.startswith('P '):
         P,alpha=tuple(order.split())
         toast.insert(pointat,alpha)
-        print(pointat.data)
         
         
         
