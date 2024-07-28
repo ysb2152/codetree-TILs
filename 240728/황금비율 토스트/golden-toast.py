@@ -95,8 +95,8 @@ for j in range(m):
             
             continue
         
-        toast.erase(pointat)
-        pointat=pointat.prev
+        pointat=toast.erase(pointat)
+        
         
        
     if order.startswith('P '):
