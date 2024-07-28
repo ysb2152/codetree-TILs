@@ -1,6 +1,6 @@
 n=int(input())
 L=list(map(int,input().split()))
-leng=len(str(L[0]))
+leng=len(max(str(L[0])))
 for k in range(leng-1,-1,-1):
     arr_new=[[] for _ in range(10)]
     for i in range(len(L)):
