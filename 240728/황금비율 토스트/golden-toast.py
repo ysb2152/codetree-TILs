@@ -72,35 +72,39 @@ n,m=map(int,input().split())
 L=input()
 L=list(L)
 toast=DoublyLinkedList()
-pointat=toast.tail
+pointat=toast.end()
 for i in range(n):
     toast.push_back(L[i])
 
-pointat=toast.tail
+pointat=toast.end()
 for j in range(m):
     order=input()
     if order.startswith('L'):
-        if pointat==toast.head:
+        if pointat==toast.begin():
             continue
         pointat=pointat.prev
+        print(pointat.data)
        
     if order.startswith('R'):
-        if pointat==toast.tail:
+        if pointat==toast.end():
             continue
         pointat=pointat.next
-        
+       
     if order.startswith('D'):
-        if pointat==toast.tail:
+        if pointat==toast.end():
             
             continue
         
         toast.erase(pointat)
-        pointat=pointat.prev
+        
+        print(pointat.data)
     if order.startswith('P '):
         P,alpha=tuple(order.split())
         toast.insert(pointat,alpha)
+        print(pointat.data)
         
         
+        
 
 
 
@@ -109,7 +113,7 @@ for j in range(m):
 
 
 
-apple=toast.head
-while apple.next!=None:
+apple=toast.begin()
+while apple!=toast.end():
     print(apple.data,end="")
     apple=apple.next
