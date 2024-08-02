@@ -9,11 +9,11 @@ for i in range(m):
     c=[]
     for j in range(n):
         c.append(L[j][i])
-    ReversedL.append(c)
+    ReversedL.append(c[::-1])
 for i in range(m):
     for j in range(n-2):
         max_sum=max(max_sum,sum(ReversedL[i][j:j+3]))
-for i in range(n):
+for i in range(n-1):
     if i==n-1:
         continue
     for j in range(m-1):
@@ -26,8 +26,9 @@ for i in range(m):
     if i==m-1:
         continue
     for j in range(n-1):
-        cnt1=ReversedL[i][j]+ReversedL[i][j+1]+ReversedL[i+1][j]
-        cnt2=ReversedL[i][j]+ReversedL[i][j+1]+ReversedL[i+1][j+1]
-        max_sum=max(max_sum,cnt1)
-        max_sum=max(max_sum,cnt2)
+        cnt12=ReversedL[i][j]+ReversedL[i][j+1]+ReversedL[i+1][j]
+        cnt22=ReversedL[i][j]+ReversedL[i][j+1]+ReversedL[i+1][j+1]
+        max_sum=max(max_sum,cnt12)
+        max_sum=max(max_sum,cnt22)
+        
 print(max_sum)
