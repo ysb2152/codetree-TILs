@@ -5,9 +5,10 @@ def in_range(a,b):
     return 0<=a and a<n and 0<=b and b<n
 def coins(a,b):
     coin=0
-    for i in range(a,a+2):
-        for j in range(b,b+2):
-            coin+=1
+    for i in range(a,a+3):
+        for j in range(b,b+3):
+            if L[i][j]==1:
+                coin+=1
     return coin
 for i in range(n):
     if i+2>=n:
