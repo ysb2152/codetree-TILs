@@ -21,6 +21,13 @@ for i in range(n-1):
         cnt2=L[i][j]+L[i][j+1]+L[i+1][j+1]
         max_sum=max(max_sum,cnt1)
         max_sum=max(max_sum,cnt2)
+for i in range(1,n):
+    for j in range(m-1):
+        cnt3=L[i][j]+L[i][j+1]+L[i-1][j]
+        cnt4=L[i][j]+L[i][j+1]+L[i-1][j+1]
+        max_sum=max(max_sum,cnt3)
+        max_sum=max(max_sum,cnt4)
+        
 
 for i in range(m):
     if i==m-1:
