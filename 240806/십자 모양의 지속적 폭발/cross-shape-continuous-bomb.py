@@ -6,12 +6,11 @@ dxs,dys=[1,0,-1,0],[0,1,0,-1]
 def in_range(a,b):
     return 0<=a<n and 0<=b<n
 def exp(c):
-    for a in range(m):
+    if L==[0]:
+        return 0
+    for a in range(n):
         if L[a][c]==0:
-            if a<n-1:
-                a+=1
-                bomb=L[a][c]
-                L[a][c]=0
+            continue
             
         else:
             bomb=L[a][c]
@@ -29,7 +28,7 @@ ans2=[[0 for _ in range(n)]for _ in range(n)]
 for i in range(m):
    
     exp(c[i])
-
+    
 
     for i in range(n):
         ans2_row=n-1
