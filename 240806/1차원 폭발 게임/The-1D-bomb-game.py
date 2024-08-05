@@ -3,11 +3,13 @@ L=[int(input()) for _ in range(n)]
 def check():
     global L
     cnt=1
+    
     if len(L)==0 and m==1:
         return False
     if len(L)==1 and len(L)==0:
         return False
     if len(L)==1 and m==1:
+        L=[]
         return False
     
     for i in range(len(L)-1,0,-1):
@@ -21,9 +23,9 @@ def check():
                 
                 return True
             cnt=1
-        if cnt==m and len(L)==m:
-            L=[]
-            return False
+    if cnt==m and len(L)==m:
+        L=[]
+        return False
     return False
         
     
@@ -60,6 +62,7 @@ while check():
     
     explode()
     remove0()
+    
    
 if len(L)==0:
     print("0")
