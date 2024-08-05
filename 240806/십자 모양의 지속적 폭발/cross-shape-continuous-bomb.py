@@ -19,6 +19,7 @@ def exp(c):
                 for i in range(1,bomb):
                     if in_range(a+i*dx,c+i*dy):
                         L[a+i*dx][c+i*dy]=0
+            
             break
         
 
@@ -38,6 +39,8 @@ for k in range(m):
             else:
                 ans2[ans2_row][i]=0
     
+    
+    L=ans2
     
 
 
