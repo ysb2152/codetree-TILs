@@ -15,5 +15,6 @@ while True:
             max_num=L[a][b]
             print(max_num,end=" ")
             r,c=a,b
+            break
     if beforer==r and beforec==c:
         break
