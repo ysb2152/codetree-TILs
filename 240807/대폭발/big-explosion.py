@@ -5,22 +5,21 @@ grid[r][c]=1
 def in_range(a,b):
     return 0<=a<n and 0<=b<n
 dxs,dys=[-1,1,0,0],[0,0,-1,1]
+
 cnt=1
-r1=r
-c1=c
-for i in range(n):
-    for j in range(n):
-        if grid[i][j]==1:
-            for dx,dy in zip(dxs,dys):
-                new_r=r1+dx*cnt
-                new_c=c1+dy*cnt
-                if in_range(new_r,new_c):
-                    r,c=r1+dx,c1+dy
-                    grid[r][c]=1
-cnt+=1
+bomb=[(r,c)]
 
+for cnt in range(1,m+1):
+    dist=2**(cnt-1)
+    new=[]
+    for a,b in bomb:
+        for dx,dy in zip(dxs,dys):
+            new_r=a+dx*dist
+            new_c=b+dy*dist
+        
+            if in_range(new_r,new_c) and (new_r,new_c) not in bomb:
+                new.append((new_r,new_c))
+    for i in range(len(new)):
+        bomb.append(new[i])
 
-
-
-for row in grid:
-    print(row)
+print(len(bomb))
