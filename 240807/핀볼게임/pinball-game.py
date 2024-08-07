@@ -24,7 +24,7 @@ def move(a,b,direction):
     #L1[a][b]='S'
    
     
-    for _ in range(100):
+    for _ in range(1000):
         #for row in L1:
             #print(row)
         #print(" ")
