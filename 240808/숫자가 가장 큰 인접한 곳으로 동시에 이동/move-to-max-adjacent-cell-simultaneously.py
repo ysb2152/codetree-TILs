@@ -33,26 +33,34 @@ for _ in range(t):
             for j in range(n):
                 if count[i][j]==1:
                     new_count[i][j]=1
+        
         break
     else:
         for i in range(n):
             for j in range(n):
-            
+                
                 if count[i][j]==1:
+                    for p in range(n):
+                        for q in range(n):
+                            if L[p][q]<L[prev_r][prev_c]:
+                                prev_r=p
+                                prev_c=q
                 
                     for dx,dy in zip(dxs,dys):
                         new_r,new_c=i+dx,j+dy
+                        
                         if in_range(new_r,new_c) and L[new_r][new_c]>=L[prev_r][prev_c]:
                             if L[prev_r][prev_c]==L[new_r][new_c]:
                                 continue
                             else:
-                               
+                                
                                 prev_r,prev_c=new_r,new_c
-                    
+                                
+                                
                     new_count[prev_r][prev_c]+=1
-    #for row in new_count:
-        #print(row)
-    #print(" ")
+        #for row in new_count:
+            #print(row)
+        #print(" ")
         for k in range(n):
             for l in range(n):
                 if new_count[k][l]>1:
