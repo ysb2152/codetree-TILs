@@ -12,30 +12,39 @@ for _ in range(m):
 count=[[0 for _ in range(n)]for _ in range(n)]
 
 for i in range(m):
-    new_count=[[0 for _ in range(n)]for _ in range(n)]
+    
     r,c=start[i]
     count[r][c]=1
 #for row in count:
     #print(row)
 #print(" ")
 for _ in range(t):
-    
+    new_count=[[0 for _ in range(n)]for _ in range(n)]
     for i in range(n):
         for j in range(n):
-            s=[]
+            
             if count[i][j]==1:
+                prev_r,prev_c=i,j
                 for dx,dy in zip(dxs,dys):
                     new_r,new_c=i+dx,j+dy
-                    if in_range(new_r,new_c):
-                        s.append([new_r,new_c,L[new_r][new_c]])
-                s.sort(key=lambda x: x[2],reverse=True)
-                new_count[s[0][0]][s[0][1]]+=1
+                    if in_range(new_r,new_c) and L[new_r][new_c]>=L[prev_r][prev_c]:
+                        if L[prev_r][prev_c]==L[new_r][new_c]:
+                            continue
+                        else:
+                               
+                            prev_r,prev_c=new_r,new_c
+                    
+                new_count[prev_r][prev_c]+=1
     #for row in new_count:
         #print(row)
+    #print(" ")
     for k in range(n):
         for l in range(n):
             if new_count[k][l]>1:
                 new_count[k][l]=0
+    #for row in new_count:
+        #print(row)
+    #print(" ")
     count=new_count
 cnt=0
 for row in count:
