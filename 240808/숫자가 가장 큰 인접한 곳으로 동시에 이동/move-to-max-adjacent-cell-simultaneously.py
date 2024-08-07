@@ -15,37 +15,52 @@ for i in range(m):
     
     r,c=start[i]
     count[r][c]=1
+prev_r=0
+prev_c=0
+for p in range(n):
+    for q in range(n):
+        if L[p][q]<L[prev_r][prev_c]:
+            prev_r=p
+            prev_c=q
+
 #for row in count:
     #print(row)
 #print(" ")
 for _ in range(t):
     new_count=[[0 for _ in range(n)]for _ in range(n)]
-    for i in range(n):
-        for j in range(n):
+    if t==1:
+        for i in range(n):
+            for j in range(n):
+                if count[i][j]==1:
+                    new_count[i][j]=1
+        break
+    else:
+        for i in range(n):
+            for j in range(n):
             
-            if count[i][j]==1:
-                prev_r,prev_c=i+dxs[0],j+dys[0]
-                for dx,dy in zip(dxs,dys):
-                    new_r,new_c=i+dx,j+dy
-                    if in_range(new_r,new_c) and L[new_r][new_c]>=L[prev_r][prev_c]:
-                        if L[prev_r][prev_c]==L[new_r][new_c]:
-                            continue
-                        else:
+                if count[i][j]==1:
+                
+                    for dx,dy in zip(dxs,dys):
+                        new_r,new_c=i+dx,j+dy
+                        if in_range(new_r,new_c) and L[new_r][new_c]>=L[prev_r][prev_c]:
+                            if L[prev_r][prev_c]==L[new_r][new_c]:
+                                continue
+                            else:
                                
-                            prev_r,prev_c=new_r,new_c
+                                prev_r,prev_c=new_r,new_c
                     
-                new_count[prev_r][prev_c]+=1
+                    new_count[prev_r][prev_c]+=1
     #for row in new_count:
         #print(row)
     #print(" ")
-    for k in range(n):
-        for l in range(n):
-            if new_count[k][l]>1:
-                new_count[k][l]=0
+        for k in range(n):
+            for l in range(n):
+                if new_count[k][l]>1:
+                    new_count[k][l]=0
     #for row in new_count:
         #print(row)
     #print(" ")
-    count=new_count
+        count=new_count
 cnt=0
 for row in count:
     for ele in row:
