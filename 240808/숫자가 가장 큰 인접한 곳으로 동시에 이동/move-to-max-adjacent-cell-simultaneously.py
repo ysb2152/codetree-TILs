@@ -24,7 +24,7 @@ for _ in range(t):
         for j in range(n):
             
             if count[i][j]==1:
-                prev_r,prev_c=i,j
+                prev_r,prev_c=i+dxs[0],j+dys[0]
                 for dx,dy in zip(dxs,dys):
                     new_r,new_c=i+dx,j+dy
                     if in_range(new_r,new_c) and L[new_r][new_c]>=L[prev_r][prev_c]:
