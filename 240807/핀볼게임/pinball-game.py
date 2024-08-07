@@ -17,16 +17,20 @@ def move(a,b,direction):
             direction=(direction+1)%4
         else:
             direction=(direction+3)%4
+    
 
         
 
     L1[a][b]='S'
+   
     
     for _ in range(100):
+        #for row in L1:
+            #print(row)
         new_a,new_b=a+dxs[direction],b+dys[direction]
+        #print(new_a,new_b,direction)
         if not in_range(new_a,new_b):
-            #for row in L1:
-                #print(row)
+            
             return cnt
         if in_range(new_a,new_b) and L1[new_a][new_b]==0:
             a=new_a
@@ -34,21 +38,21 @@ def move(a,b,direction):
             L1[a][b]='S'
             cnt+=1
         if in_range(new_a,new_b) and L1[new_a][new_b]==1:
-            if new_a<a or new_b<b:
-                a=new_a
-                b=new_b
-                direction=(direction+1)%4
-                L1[a][b]='S'
-                cnt+=1
-            else:
+            if direction==0 or direction==2:
                 a=new_a
                 b=new_b
                 direction=(direction+3)%4
                 L1[a][b]='S'
                 cnt+=1
+            else:
+                a=new_a
+                b=new_b
+                direction=(direction+1)%4
+                L1[a][b]='S'
+                cnt+=1
 
         if in_range(new_a,new_b) and L1[new_a][new_b]==2:
-            if new_a<a or new_b>b:
+            if direction==0 or direction==2:
                 a=new_a
                 b=new_b
                 direction=(direction+1)%4
@@ -62,7 +66,8 @@ def move(a,b,direction):
                 cnt+=1
     return 0
 
-   
+#for i in range(n):
+    #print(move(i,0,0))
 for i in range(n):
     max_cnt=max(max_cnt,move(i,0,0))
     max_cnt=max(max_cnt,move(0,i,1))
