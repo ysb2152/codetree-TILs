@@ -17,7 +17,7 @@ for _ in range(t):
     #for row in dir_L:
         #print(row)
     #print(" ")
-    for time in range(100000):
+    for time in range(1000):
         new_L=[[0 for _ in range(n)]for _ in range(n)]
         new_dir_L=[[0 for _ in range(n)]for _ in range(n)]
         #for row in L:
