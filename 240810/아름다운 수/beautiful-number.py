@@ -24,7 +24,7 @@ def choose(num):
             cnt+=1
         return cnt
     
-    for i in range(1,10):
+    for i in range(1,5):
         ans.append(i)
         choose(num+1)
         ans.pop()
