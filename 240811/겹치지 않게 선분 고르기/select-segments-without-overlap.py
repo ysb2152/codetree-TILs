@@ -26,5 +26,8 @@ def choose(curr_num):
         ans.pop()
                 
     return
-choose(1)
-print(max_cnt)
+if n==1:
+    print("1")
+else:
+    choose(1)
+    print(max_cnt)
