@@ -5,7 +5,7 @@ max_cnt=-99999
 def print_ans():
     global max_cnt
     cnt=0
-    temp=[0 for _ in range(10)]
+    temp=[0 for _ in range(1000)]
     for i in range(n):
         if ans[i]==1:
             a,b=L[i]
