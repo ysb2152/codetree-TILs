@@ -1,10 +1,18 @@
+import sys
 n,m=map(int,input().split())
 L=list(map(int,input().split()))
 ans=[]
-max_ans=-9999999
+max_ans=-sys.maxsize
 def choose(num,cnt):
     global max_ans
+    if n==m:
+        sums=L[0]
+        for j in range(1,m):
+            sums=sums^L[j]
+        max_ans=max(max_ans,sums)
+        return
     if num==m+1:
+        
         sums=ans[0]
         for j in range(1,m):
             sums=sums^ans[j]
