@@ -16,6 +16,8 @@ def choose(num):
                 if cost[ans[j]-1][ans[j+1]-1]==0:
                     return
                 costs+=cost[ans[j]-1][ans[j+1]-1]
+            if cost[ans[-1]-1][0]==0:
+                return
             costs+=cost[ans[-1]-1][0]
             #print(costs)
             min_cost=min(min_cost,costs)
