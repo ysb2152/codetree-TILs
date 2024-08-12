@@ -1,7 +1,8 @@
+import sys
 n=int(input())
 cost=[list(map(int,input().split()))for _ in range(n)]
 visited=[False] * (n+1)
-min_cost=9999
+min_cost=sys.maxsize
 ans=[]
 def choose(num):
     global min_cost
