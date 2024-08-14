@@ -3,7 +3,7 @@ n=int(input())
 grid=[list(map(int,input().split()))for _ in range(n)]
 visited=[[0 for _ in range(n)]for _ in range(n)]
 cnt=1
-
+sys.setrecursionlimit(5000)
 explode=0
 max_blocks=-sys.maxsize
 dxs,dys=[-1,1,0,0],[0,0,-1,1]
