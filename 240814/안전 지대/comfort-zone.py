@@ -50,5 +50,9 @@ for k in range(1,101):
     grid=[beforegrid[:] for beforegrid in beforegrid]
     visited=[[0 for _ in range(m)]for _ in range(n)]
     cnt=65
-print(keys.index(max(keys)),end=" ")
-print(max(keys))
+if max(keys)==0:
+    print("1",end=" ")
+    print("0")
+else:
+    print(keys.index(max(keys)),end=" ")
+    print(max(keys))
