@@ -1,7 +1,7 @@
 from collections import deque
 n,m=map(int,input().split())
 grid=[list(map(int,input().split()))for _ in range(n)]
-visited=[[0 for _ in range(n)]for _ in range(m)]
+visited=[[0 for _ in range(m)]for _ in range(n)]
 
 order=1
 def in_range(a,b):
