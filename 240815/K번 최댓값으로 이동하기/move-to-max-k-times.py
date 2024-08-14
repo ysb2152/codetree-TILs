@@ -36,6 +36,8 @@ for _ in range(k):
                    
     push(r,c)
     bfs()
+    if not possible:
+        break
     possible.sort(key=lambda x:(-x[2],x[0],x[1]))
     r,c=possible[0][0],possible[0][1]
     #print(r,c)
