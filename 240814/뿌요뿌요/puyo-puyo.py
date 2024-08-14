@@ -31,4 +31,5 @@ for i in range(n):
         visited[i][j]=1
         dfs(i,j)
         cnt=1
+max_blocks=max(max_blocks,cnt)
 print(explode,max_blocks)
