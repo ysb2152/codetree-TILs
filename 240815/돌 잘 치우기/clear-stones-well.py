@@ -72,6 +72,8 @@ def choose_remove_rocks(num,grid):
         #print(" ")
         for j in range(k):
             r,c=start_point[j]
+            if visited[r][c]==1:
+                continue
             push(r,c)
         bfs(new_grid)
         ones=0
