@@ -45,7 +45,7 @@ def bfs(new_grid):
     #for row in new_grid:
         #print(row)
     
-def choose_remove_rocks(num,grid):
+def choose_remove_rocks(num,cnt):
     
     global new_grid
     global max_cnt
@@ -92,15 +92,14 @@ def choose_remove_rocks(num,grid):
         
         
         return
-    for i in range(len(to_remove_rocks)):
+    for i in range(cnt,len(to_remove_rocks)):
         
-        if to_remove_rocks[i] in remove_rocks:
-            continue
+        
         remove_rocks.append(to_remove_rocks[i])
-        choose_remove_rocks(num+1,grid)
+        choose_remove_rocks(num+1,i)
         remove_rocks.pop()
+        
     return
 
-
-choose_remove_rocks(1,grid)        
+choose_remove_rocks(1,0)        
 print(max_cnt)
