@@ -29,7 +29,7 @@ def bfs():
                 push(new_a,new_b,step[a][b]+1)
 push(r1,c1,0)
 bfs()
-if step[r2][c2]!=0:
+if step[r2][c2]!=0 or (r1==r2 and c1==c2):
     print(step[r2][c2])
 else:
     print("-1")
