@@ -75,7 +75,7 @@ def choose_remove_rocks(num,grid):
             if visited[r][c]==1:
                 continue
             push(r,c)
-        bfs(new_grid)
+            bfs(new_grid)
         ones=0
         
         for row in visited:
