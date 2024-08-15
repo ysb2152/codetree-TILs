@@ -46,7 +46,7 @@ for k in range(h):
         if step[x1][y1]!=0:
             min_move=min(min_move,step[x1][y1])
     new_grid[a][b]=min_move
-    if (a,b) in people and new_grid[a][b]==0:
+    if (a,b) in people and new_grid[a][b]==min_move:
         new_grid[a][b]=-1
     visited=[[0 for _ in range(n)]for _ in range(n)]
     step=[[0 for _ in range(n)]for _ in range(n)]
