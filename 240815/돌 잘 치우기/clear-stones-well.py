@@ -52,6 +52,12 @@ def choose_remove_rocks(num,grid):
     global cnt
     global max_cnt
     if m==0:
+        for j in range(k):
+            r,c=start_point[j]
+            push(r,c)
+            bfs(new_grid)
+            max_cnt=max(max_cnt,cnt)
+            cnt=0 
         return
     if num==m+1:
         #print(remove_rocks)
