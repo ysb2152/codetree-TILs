@@ -4,6 +4,8 @@ n,k,m=map(int,input().split())
 grid=[list(map(int,input().split()))for _ in range(n)]
 start_point=[tuple(map(int,input().split())) for _ in range(k)]
 visited=[[0 for _ in range(n)]for _ in range(n)]
+new_grid=[grid[:]for grid in grid]
+all_comb=[]
 max_cnt=-sys.maxsize
 for a in range(k):
     startpointx,startpointy=start_point[a]
@@ -44,8 +46,8 @@ def bfs(new_grid):
         #print(row)
     
 def choose_remove_rocks(num,grid):
-    new_grid=[grid[:]for grid in grid]
-        
+    
+    global new_grid
     global max_cnt
     global visited
     if m==0:
@@ -63,7 +65,9 @@ def choose_remove_rocks(num,grid):
             
         return
     if num==m+1:
-        #print(remove_rocks)
+        
+        all_comb.append(remove_rocks)
+        
         for i in range(len(remove_rocks)):
             a,b=remove_rocks[i]
             new_grid[a][b]=0
@@ -77,16 +81,19 @@ def choose_remove_rocks(num,grid):
             push(r,c)
             bfs(new_grid)
         ones=0
-        
+        for i in range(len(remove_rocks)):
+            a,b=remove_rocks[i]
+            new_grid[a][b]=1
         for row in visited:
             ones+=row.count(1)
         max_cnt=max(max_cnt,ones)
         
         visited=[[0 for _ in range(n)]for _ in range(n)]
-            
+        
         
         return
     for i in range(len(to_remove_rocks)):
+        
         if to_remove_rocks[i] in remove_rocks:
             continue
         remove_rocks.append(to_remove_rocks[i])
@@ -94,6 +101,6 @@ def choose_remove_rocks(num,grid):
         remove_rocks.pop()
     return
 
-  
+
 choose_remove_rocks(1,grid)        
 print(max_cnt)
