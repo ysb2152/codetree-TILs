@@ -58,6 +58,12 @@ def choose_remove_rocks(num,grid):
             r,c=start_point[j]
             push(r,c)
             bfs(new_grid)
+        ones=0
+        for p in range(n):
+            for q in range(n):
+                if visited[p][q]==1:
+                    ones+=1
+        max_cnt=max(max_cnt,ones)
             
         return
     if num==m+1:
