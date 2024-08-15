@@ -4,12 +4,10 @@ n,k,m=map(int,input().split())
 grid=[list(map(int,input().split()))for _ in range(n)]
 start_point=[tuple(map(int,input().split())) for _ in range(k)]
 visited=[[0 for _ in range(n)]for _ in range(n)]
-
 max_cnt=-sys.maxsize
 for a in range(k):
     startpointx,startpointy=start_point[a]
     start_point[a]=(startpointx-1,startpointy-1)
-
 dxs,dys=[-1,1,0,0],[0,0,-1,1]
 remove_rocks=[]
 to_remove_rocks=[]
@@ -17,14 +15,11 @@ for i in range(n):
     for j in range(n):
         if grid[i][j]==1:
             to_remove_rocks.append((i,j))
-#print(to_remove_rocks)
 q=deque()
 def in_range(a,b):
     return 0<=a<n and 0<=b<n
 def push(a,b):
-
     visited[a][b]=1
-    
     q.append((a,b))
 def can_move(a,b,grid):
     if not in_range(a,b):
@@ -56,6 +51,8 @@ def choose_remove_rocks(num,grid):
     if m==0:
         for j in range(k):
             r,c=start_point[j]
+            if visited[r][c]==1:
+                continue
             push(r,c)
             bfs(new_grid)
         ones=0
@@ -84,10 +81,9 @@ def choose_remove_rocks(num,grid):
                 if visited[p][q]==1:
                     ones+=1
         max_cnt=max(max_cnt,ones)
-
         
         visited=[[0 for _ in range(n)]for _ in range(n)]
-                   
+                  
         
         return
     for i in range(len(to_remove_rocks)):
