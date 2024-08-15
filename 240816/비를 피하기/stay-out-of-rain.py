@@ -25,7 +25,7 @@ def can_move(a,b):
         return False
     return True
 def bfs(s):
-    
+    minimum=[]
     dxs,dys=[-1,1,0,0],[0,0,-1,1]
     while q:
         a,b,s=q.popleft()
@@ -34,10 +34,11 @@ def bfs(s):
             if can_move(new_a,new_b):
                 
                 if (new_a,new_b) in safearea:
-                    return s
+                    minimum.append(s)
                 
                 visited[new_a][new_b]=1
                 push(new_a,new_b,s+1)
+    return min(minimum)
                 
 new_grid=[[0 for _ in range(n)]for _ in range(n)]
 
