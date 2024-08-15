@@ -9,7 +9,7 @@ max_cnt=-sys.maxsize
 for a in range(k):
     startpointx,startpointy=start_point[a]
     start_point[a]=(startpointx-1,startpointy-1)
-cnt=0
+
 dxs,dys=[-1,1,0,0],[0,0,-1,1]
 remove_rocks=[]
 to_remove_rocks=[]
@@ -22,9 +22,9 @@ q=deque()
 def in_range(a,b):
     return 0<=a<n and 0<=b<n
 def push(a,b):
-    global cnt
+
     visited[a][b]=1
-    cnt+=1
+    
     q.append((a,b))
 def can_move(a,b,grid):
     if not in_range(a,b):
@@ -50,8 +50,7 @@ def bfs(new_grid):
     
 def choose_remove_rocks(num,grid):
     new_grid=[grid[:]for grid in grid]
-    
-    global cnt
+        
     global max_cnt
     global visited
     if m==0:
@@ -59,8 +58,7 @@ def choose_remove_rocks(num,grid):
             r,c=start_point[j]
             push(r,c)
             bfs(new_grid)
-            max_cnt=max(max_cnt,cnt)
-            cnt=0 
+            
         return
     if num==m+1:
         #print(remove_rocks)
@@ -83,7 +81,7 @@ def choose_remove_rocks(num,grid):
 
         
         visited=[[0 for _ in range(n)]for _ in range(n)]
-        cnt=0           
+                   
         
         return
     for i in range(len(to_remove_rocks)):
