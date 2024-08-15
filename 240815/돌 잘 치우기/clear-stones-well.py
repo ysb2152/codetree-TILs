@@ -84,11 +84,14 @@ def choose_remove_rocks(num,cnt):
         for i in range(len(remove_rocks)):
             a,b=remove_rocks[i]
             new_grid[a][b]=1
-        for row in visited:
-            ones+=row.count(1)
+        for p in range(n):
+            for q in range(n):
+                if visited[p][q]==1:
+                    ones+=1
+                    visited[p][q]=0
         max_cnt=max(max_cnt,ones)
         
-        visited=[[0 for _ in range(n)]for _ in range(n)]
+        
         
         
         return
