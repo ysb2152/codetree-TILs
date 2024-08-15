@@ -73,7 +73,7 @@ def choose_remove_rocks(num,grid):
         for j in range(k):
             r,c=start_point[j]
             push(r,c)
-            bfs(new_grid)
+        bfs(new_grid)
         ones=0
         
         for row in visited:
