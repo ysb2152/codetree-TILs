@@ -40,10 +40,11 @@ for k in range(h):
     visited[a][b]=1
     push(a,b,0)
     bfs()
-    min_move=99999
+    min_move=99999999
     for p in range(len(safearea)):
         x1,y1=safearea[p]
-        min_move=min(min_move,step[x1][y1])
+        if step[x1][y1]!=0:
+            min_move=min(min_move,step[x1][y1])
     new_grid[a][b]=min_move
     if (a,b) in people and new_grid[a][b]==0:
         new_grid[a][b]=-1
