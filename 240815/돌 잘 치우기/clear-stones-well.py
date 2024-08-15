@@ -17,6 +17,7 @@ for i in range(n):
     for j in range(n):
         if grid[i][j]==1:
             to_remove_rocks.append((i,j))
+#print(to_remove_rocks)
 q=deque()
 def in_range(a,b):
     return 0<=a<n and 0<=b<n
@@ -42,15 +43,17 @@ def bfs(new_grid):
             new_a,new_b=a+dx,b+dy
             if can_move(new_a,new_b,new_grid):
                 visited[new_a][new_b]=1
-                new_grid[new_a][new_b]=cnt
+                
                 push(new_a,new_b)
     #for row in new_grid:
         #print(row)
-    visited=[[0 for _ in range(n)]for _ in range(n)]
+    
 def choose_remove_rocks(num,grid):
     new_grid=[grid[:]for grid in grid]
+    
     global cnt
     global max_cnt
+    global visited
     if m==0:
         for j in range(k):
             r,c=start_point[j]
@@ -71,8 +74,16 @@ def choose_remove_rocks(num,grid):
             r,c=start_point[j]
             push(r,c)
             bfs(new_grid)
-            max_cnt=max(max_cnt,cnt)
-            cnt=0           
+        ones=0
+        for p in range(n):
+            for q in range(n):
+                if visited[p][q]==1:
+                    ones+=1
+        max_cnt=max(max_cnt,ones)
+
+        
+        visited=[[0 for _ in range(n)]for _ in range(n)]
+        cnt=0           
         
         return
     for i in range(len(to_remove_rocks)):
