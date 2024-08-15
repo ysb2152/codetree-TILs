@@ -2,10 +2,10 @@ from collections import deque
 q=deque()
 n,m=map(int,input().split())
 grid=[list(map(int,input().split()))for _ in range(n)]
-visited=[[0 for _ in range(n)]for _ in range(n)]
-step=[[0 for _ in range(n)]for _ in range(n)]
+visited=[[0 for _ in range(m)]for _ in range(n)]
+step=[[0 for _ in range(m)]for _ in range(n)]
 def in_range(a,b):
-    return 0<=a<n and 0<=b<n
+    return 0<=a<n and 0<=b<m
 def push(a,b,s):
     step[a][b]=s
     visited[a][b]=1
