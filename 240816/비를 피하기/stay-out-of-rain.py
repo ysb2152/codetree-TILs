@@ -38,7 +38,10 @@ def bfs(s):
                 
                 visited[new_a][new_b]=1
                 push(new_a,new_b,s+1)
-    return min(minimum)
+    if minimum==[]:
+        return None
+    else:
+        return min(minimum)
                 
 new_grid=[[0 for _ in range(n)]for _ in range(n)]
 
