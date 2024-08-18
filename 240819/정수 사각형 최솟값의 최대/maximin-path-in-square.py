@@ -12,4 +12,7 @@ for i in range(1,n):
         if i==n-1 and j==n-1:
             break
         dp[i][j]=min(dp[i-1][j],dp[i][j-1])
-print(max(dp[n-2][n-1],dp[n-1][n-2]))
+if max(dp[n-2][n-1],dp[n-1][n-2])<=grid[n-1][n-1]:
+    print(max(dp[n-2][n-1],dp[n-1][n-2]))
+else:
+    print(grid[n-1][n-1])
