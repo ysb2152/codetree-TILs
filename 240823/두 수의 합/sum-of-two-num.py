@@ -9,10 +9,15 @@ cnt=0
 
 for ele in hashmap:
     if k-ele in hashmap:
-        if hashmap[ele]>=2:
+        if ele==k-ele:
             cnt+=(hashmap[ele]*(hashmap[ele]-1))//2
+            hashmap[ele]=0
+            
         else:
-            cnt+=0.5
+
+            cnt+=hashmap[ele]*hashmap[k-ele]
+            hashmap[ele]=0
+            hashmap[k-ele]=0
 
 
         
