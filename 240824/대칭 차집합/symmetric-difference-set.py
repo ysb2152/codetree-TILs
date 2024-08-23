@@ -2,11 +2,13 @@ n,m=map(int,input().split())
 a=list(map(int,input().split()))
 b=list(map(int,input().split()))
 
-new=[]
-new=set(new)
+
+new=set(a)
 for ele in b:
-    if ele in a:
+    if ele not in new:
         new.add(ele)
-
-
-print(n+m-(2*len(new)))
+new1=set(b)
+for ele in a:
+    if ele not in new1:
+        new1.add(ele)
+print(len(new)-n+len(new1)-m)
