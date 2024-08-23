@@ -1,5 +1,6 @@
 n=int(input())
 a=list(map(int,input().split()))
+a=set(a)
 m=int(input())
 b=list(map(int,input().split()))
 for ele in b:
