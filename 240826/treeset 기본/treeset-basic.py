@@ -5,7 +5,10 @@ for _ in range(n):
     a=input()
     if a.startswith("add"):
         _,x=a.split()
-        ss.add(x)
+        if x in ss:
+            continue
+        else:
+            ss.add(x)
     if a.startswith("remove"):
         _,x=a.split()
         ss.remove(x)
