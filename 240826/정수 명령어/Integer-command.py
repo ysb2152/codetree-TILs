@@ -25,3 +25,4 @@ for _ in range(T):
     else:
         print(ss[-1],end=" ")
         print(ss[0])
+    ss=SortedSet()
