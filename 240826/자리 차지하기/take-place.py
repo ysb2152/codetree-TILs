@@ -8,8 +8,8 @@ for i in range(len(L)):
     ss.add(L[i]-1)
 
 for i in range(len(ss)-1,-1,-1):
-    if seats[ss[i]]!=0:
-        break
-    else:
+    #if seats[ss[i]]!=0:
+        #break
+    #else:
         cnt+=1
 print(cnt)
