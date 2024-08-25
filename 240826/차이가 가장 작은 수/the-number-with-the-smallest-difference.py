@@ -2,17 +2,18 @@ import sys
 from sortedcontainers import SortedSet
 ss=SortedSet()
 n,m=map(int,input().split())
-
+L=[]
 min_cnt=sys.maxsize
 for i in range(n):
     a=int(input())
     ss.add(a)
-for i in range(n):
-    if ss.bisect_right(ss[i])==len(ss):
+    L.append(a)
+for x in L:
+    if ss.bisect_right(x)==len(ss):
         continue
     else:
         
-        p=abs(ss[ss.bisect_right(ss[i]-m)-1]-ss[i])
+        p=abs(ss[ss.bisect_right(x-m)-1]-x)
         
         if p>=m:
             min_cnt=min(min_cnt,p)
