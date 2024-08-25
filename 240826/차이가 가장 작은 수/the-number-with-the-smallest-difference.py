@@ -16,7 +16,7 @@ for i in range(n):
         
         if p>=m:
             min_cnt=min(min_cnt,p)
-if min_cnt=sys.maxsize:
+if min_cnt==sys.maxsize:
     print("-1")
 else:
     print(min_cnt)
