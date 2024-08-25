@@ -9,7 +9,7 @@ ss=SortedSet(L)
 
 for _ in range(m):
     k=int(input())
-    k=(k,sys.maxsize)
+    k=(k,1)
     index=ss.bisect_left(k)
     if index==len(ss):
         print("-1 -1")
