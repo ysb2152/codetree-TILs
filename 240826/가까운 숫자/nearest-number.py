@@ -1,9 +1,10 @@
+import sys
 from sortedcontainers import SortedSet
 ss=SortedSet()
 n=int(input())
 L=list(map(int,input().split()))
 ss.add(0)
-min_cnt=9999
+min_cnt=sys.maxsize
 for i in range(n):
     ss.add(L[i])
     #print(ss)
