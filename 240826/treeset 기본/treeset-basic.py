@@ -9,33 +9,33 @@ for _ in range(n):
             continue
         else:
             ss.add(x)
-    if a.startswith("remove"):
+    elif a.startswith("remove"):
         _,x=a.split()
         ss.remove(x)
-    if a.startswith("find"):
+    elif a.startswith("find"):
         _,x=a.split()
         if x in ss:
             print("true")
         else:
             print("false")
-    if a.startswith("lower_bound"):
+    elif a.startswith("lower_bound"):
         _,x=a.split()
         if ss.bisect_left(x)==len(ss):
             print("None")
         else:
             print(ss[ss.bisect_left(x)])
-    if a.startswith("upper_bound"):
+    elif a.startswith("upper_bound"):
         _,x=a.split()
         if ss.bisect_right(x)==len(ss):
             print("None")
         else:
             print(ss[ss.bisect_right(x)])
-    if a.startswith("largest"):
+    elif a.startswith("largest"):
         if len(ss)==0:
             print("None")
         else:
             print(ss[-1])
-    if a.startswith("smallest"):
+    elif a.startswith("smallest"):
         if len(ss)==0:
             print("None")
         else:
