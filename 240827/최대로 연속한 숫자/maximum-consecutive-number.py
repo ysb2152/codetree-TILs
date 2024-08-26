@@ -1,4 +1,4 @@
-ifrom sortedcontainers import SortedSet
+from sortedcontainers import SortedSet
 
 # 변수 선언 및 입력:
 n, m = tuple(map(int, input().split()))
