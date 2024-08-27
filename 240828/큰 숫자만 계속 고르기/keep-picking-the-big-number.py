@@ -8,5 +8,6 @@ for i in range(n):
 for i in range(m):
    
     hq[0]+=1
-    heapq.heapify(hq)
+    if hq[0]>min(hq):
+        heapq.heapify(hq)
 print(-hq[0])
