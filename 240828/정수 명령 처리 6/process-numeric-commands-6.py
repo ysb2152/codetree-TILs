@@ -32,16 +32,21 @@ for _ in range(n):
         _,A=a.split()
         A=int(A)
         PQ.push(A)
+        continue
     if a.startswith("pop"):
         print(PQ.pop())
     if a.startswith("size"):
         
         print(PQ.size())
+        continue
     if a.startswith("empty"):
-        if PQ.empty==True:
+        if PQ.empty()==True:
             print("1")
+            continue
         else:
             print("0")
+            continue
     if a.startswith("top"):
        
         print(PQ.top())
+        continue
