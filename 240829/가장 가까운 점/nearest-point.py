@@ -5,19 +5,17 @@ hq=[]
 for _ in range(n):
     a,b=map(int,input().split())
     heapq.heappush(hq,(abs(a)+abs(b),a,b))
-    heapq.heapify(hq)
+    
     
 for _ in range(m):
     newhq=[]
     for point in hq:
         _,a,b=point
-        heapq.heappush(newhq,(abs(a)+abs(b),a,b))
-        
-    newhq[0]=list(newhq[0])
-    newhq[0][1]+=2
-    newhq[0][2]+=2
-    newhq[0][0]=abs(newhq[0][1])+abs(newhq[0][2])
-    newhq[0]=tuple(newhq[0])
-    heapq.heapify(newhq)
+        heapq.heappush(newhq,((abs(a)+abs(b)),a,b))
+    x,y,z=heapq.heappop(newhq)
+    
+    heapq.heappush(newhq,(x+4,y+2,z+2))
+    
     hq=newhq
+    
 print(hq[0][1],hq[0][2])
