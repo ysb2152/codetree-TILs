@@ -12,7 +12,7 @@ for _ in range(m):
     for point in hq:
         _,a,b=point
         heapq.heappush(newhq,(abs(a)+abs(b),a,b))
-        heapq.heapify(newhq)
+        
     newhq[0]=list(newhq[0])
     newhq[0][1]+=2
     newhq[0][2]+=2
