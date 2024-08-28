@@ -17,7 +17,7 @@ for k in range(n-3,-1,-1):
     a=heapq.heappop(pq)
     #print(pq)
     #print(sum(pq)/(n-k-1))
-    max_avg=max(max_avg,sum(pq)/len(pq))
+    max_avg=max(max_avg,sum(pq)/(n-k-1))
     heapq.heappush(pq,a)
     
 print(f"{max_avg:.2f}")
