@@ -8,14 +8,11 @@ for _ in range(n):
     
     
 for _ in range(m):
-    newhq=[]
-    for point in hq:
-        _,a,b=point
-        heapq.heappush(newhq,((abs(a)+abs(b)),a,b))
-    x,y,z=heapq.heappop(newhq)
     
-    heapq.heappush(newhq,(x+4,y+2,z+2))
+    x,y,z=heapq.heappop(hq)
     
-    hq=newhq
+    heapq.heappush(hq,(x+4,y+2,z+2))
+    
+    
     
 print(hq[0][1],hq[0][2])
