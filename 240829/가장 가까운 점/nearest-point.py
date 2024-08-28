@@ -1,9 +1,9 @@
 import heapq
 n,m=map(int,input().split())
-arr=[tuple(map(int,input().split()))for _ in range(n)]
+
 hq=[]
-for point in arr:
-    a,b=point
+for _ in range(n):
+    a,b=map(int,input().split())
     heapq.heappush(hq,(abs(a)+abs(b),a,b))
     heapq.heapify(hq)
     
