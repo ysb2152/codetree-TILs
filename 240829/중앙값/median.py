@@ -15,5 +15,5 @@ for _ in range(t):
             continue
         else:
             heapq.heappush(pq,arr[i])
-    print(pq)
+    #print(pq)
     pq=[]
