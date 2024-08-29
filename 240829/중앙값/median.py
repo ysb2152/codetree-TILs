@@ -17,3 +17,4 @@ for _ in range(t):
             heapq.heappush(pq,arr[i])
     #print(pq)
     pq=[]
+    print(" ")
