@@ -1,4 +1,5 @@
 N, K, B = map(int, input().split())
+
 missing = [int(input()) for _ in range(B)]
 cnt=0
 nums=[i for i in range(1,N+1)]
@@ -17,5 +18,15 @@ for i in range(1,N):
         prefix[i]=prefix[i-1]+1
     else:
         prefix[i]=prefix[i-1]
-print(K-max(prefix))
+for i in range(N-K):
+    #print(prefix[i+K-1]-prefix[i]+nums[i])
+    min_val=min(min_val,K-(prefix[i+K-1]-prefix[i]+nums[i]))
+
+#print(prefix)
+print(min_val)
+
+
+
+
+
 
