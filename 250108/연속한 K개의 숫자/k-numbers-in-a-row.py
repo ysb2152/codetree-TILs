@@ -18,11 +18,13 @@ for i in range(1,N):
         prefix[i]=prefix[i-1]+1
     else:
         prefix[i]=prefix[i-1]
-for i in range(N-K):
+for i in range(N-K+1):
     #print(prefix[i+K-1]-prefix[i]+nums[i])
+    
     min_val=min(min_val,K-(prefix[i+K-1]-prefix[i]+nums[i]))
 
 #print(prefix)
+
 print(min_val)
 
 
