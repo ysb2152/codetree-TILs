@@ -17,7 +17,5 @@ for i in range(1,N):
         prefix[i]=prefix[i-1]+1
     else:
         prefix[i]=prefix[i-1]
-for i in range(N-K):
-    min_val=min(min_val,K-(prefix[i+K]-prefix[i]+nums[i]))
-print(min_val)
+print(K-max(prefix))
 
