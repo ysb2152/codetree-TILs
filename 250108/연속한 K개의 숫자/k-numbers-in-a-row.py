@@ -9,11 +9,15 @@ for i in range(len(nums)):
         nums[i]=1
 #print(nums)
 prefix=[0 for _ in range(N)]
+answer=[0 for _ in range(N)]
 prefix[0]=nums[0]
+min_val=9999999
 for i in range(1,N):
     if nums[i]==1:
         prefix[i]=prefix[i-1]+1
     else:
         prefix[i]=prefix[i-1]
-    
-print(K-max(prefix))
+for i in range(N-K):
+    min_val=min(min_val,K-(prefix[i+K]-prefix[i]+nums[i]))
+print(min_val)
+
